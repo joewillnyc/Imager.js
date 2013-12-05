@@ -70,6 +70,7 @@
         this.cache           = {};
         this.scrollDelay     = opts.scrollDelay || 250;
         this.lazyload        = opts.lazyload || false;
+        this.imagesReplaced  = opts.imagesReplaced || function() {};
         this.changeDivsToEmptyImages();
 
         window.requestAnimationFrame(function(){
@@ -166,6 +167,7 @@
             }
 
             this.isResizing = false;
+            this.imagesReplaced();
         }
     };
 
